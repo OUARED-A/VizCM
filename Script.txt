@@ -1,0 +1,44 @@
+http://www.apcjones.com/arrows/
+
+----
+START n=node(*) RETURN n;
+
+-------
+CREATE 
+  (`0` :CM0003 {id:"CM0003"}) ,
+  (`1` :CM0006 {id:"CM0006"}) ,
+  (`8` :`SIGMOD Conference` {id:"SIGMOD Conference "}) ,
+  (`9` :`Selingeret al. 1979` {id:"Selingeret al. 1979"}) ,
+  (`10` :`[Florescuet al. 2000]` {id:"[Florescuet al. 2000]"}) ,
+  (`16` :`Conference VLDB` {id:"VLDB Conference "}) ,
+  (`19` :`MEDI Conference` {id:"MEDI Conference "}) ,
+  (`20` :CM00011 {id:"CM00011"}) ,
+  (`21` :CM0004 {id:"CM0004"}) ,
+  (`22` :CM0008 {id:"CM0008"}) ,
+  (`23` :CM0035 {id:"CM00035"}) ,
+  (`24` :`Bellatreche et al. 2000` {id:"Bellatreche et al. 2000"}) ,
+  (`25` :`[Abadi et al. 2008]` {id:"[Abadi et al. 2008]"}) ,
+  (`26` :CM0002 {id:"CM0002"}) ,
+  (`27` :CM0037 {id:"CM00037"}) ,
+  (`29` :`Aouiche et al. 2005` {id:"Aouiche et al. 2005"}) ,
+  (`0`)-[:`REVISITED_OF` ]->(`21`),
+  (`26`)-[:`EXTEND_OF` ]->(`0`),
+  (`0`)-[:`IS_PUBLLISHED_AT` ]->(`19`),
+  (`26`)-[:`IS_PUBLLISHED_AT` ]->(`19`),
+  (`21`)-[:`IS_PUBLLISHED_AT` ]->(`19`),
+  (`26`)-[:`IS_EVOLVED_BY` ]->(`24`),
+  (`21`)-[:`CALIBRATED_BY` ]->(`25`),
+  (`22`)-[:`CALIBRATED_OF` ]->(`1`),
+  (`22`)-[:`RELATED_TO` ]->(`22`),
+  (`22`)-[:`IS_INITIALIZED_BY` ]->(`10`),
+  (`20`)-[:`IS_INITIALIZED_BY` ]->(`9`),
+  (`23`)-[:`IS_INITIALIZED_BY` ]->(`10`),
+  (`25`)-[:`CITED_BY` ]->(`27`),
+  (`0`)-[:`IS_INITIALIZED_BY` ]->(`29`),
+  (`27`)-[:`IS_PUBLLISHED_AT` ]->(`16`),
+  (`23`)-[:`IS_PUBLLISHED_AT` ]->(`16`),
+  (`1`)-[:`IS_PUBLLISHED_AT` ]->(`8`),
+  (`22`)-[:`IS_PUBLLISHED_AT` ]->(`8`),
+  (`20`)-[:`IS_PUBLLISHED_AT` ]->(`8`),
+  (`9`)-[:`CITED_BY` ]->(`22`),
+  (`23`)-[:`RELATED_TO` ]->(`23`)
