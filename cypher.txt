@@ -1,0 +1,24 @@
+MATCH ( cm1 : CostModel )
+[ HAS_DETAILED ] -> ( cxt1 : Context )
+WHERE cm1 . costType =’ InputOutput ’
+AND cm1. performanceType =’ performance ’
+AND cxt1 . storageDevice IN (’HDD ’,’SSD ’)
+AND cxt1 . processingDevice =’CPU ’
+AND cxt1 . type =’ centralized ’
+AND cxt1 . kind =’ sharedNothing ’
+AND cxt1 . architecture =’ centralized ’
+RETURN cm1 .Id ,
+cm1 .Name ,
+cm1 . References
+
+-----------------------
+MATCH (A: Author ) -[i: IS_INITIALIZED_BY ]->(c: CostModel ), (b) -[s: SIMILARITY
+]-(a: Author { name :’Ladjel Bellatreche ’})
+WHERE NOT ((a) -[: RATED ]->(m))
+WITH m, s. similarity AS similarity , r. rating AS rating
+ORDER BY m.name , similarity DESC
+WITH m. name AS CostModel , COLLECT ( rating ) [0..3] AS ratings
+WITH CostModel , REDUCE (s = 0, i IN ratings | s + i) *1.0 / LENGTH ( ratings )
+AS year
+ORDER BY year DESC
+RETURN CostModel AS CostModel , references AS Recommendation
